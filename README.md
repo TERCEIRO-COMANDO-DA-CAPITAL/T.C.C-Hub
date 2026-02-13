@@ -11,32 +11,33 @@ Estrutura organizada, limpa e modular.
 ```lua
 -- carregar lib (codigo fonte)
 local tcc = loadstring(game:HttpGet("https://raw.githubusercontent.com/SrDark222/Mafia-hub-v1/refs/heads/main/mafia%20hub2.lua"))()
-
+```
 
 ---
 
-🪟 Criando a Janela Principal
+# 🪟 Criando a Janela Principal
 
+```lua
 local Window = tcc:MakeWindow({
     Title = "MAFIA HUB - Brookhaven",
     SubTitle = "by menor DK",
     SaveFolder = "tcc_hub.lua"
 })
+```
 
-📌 Parâmetros
+### 📌 Parâmetros
 
-Campo	Tipo	Descrição
-
-Title	string	Nome principal do Hub
-SubTitle	string	Subnome exibido abaixo do título
-SaveFolder	string	Nome do arquivo de config
-
-
+| Campo       | Tipo   | Descrição |
+|------------|--------|-----------|
+| Title      | string | Nome principal do Hub |
+| SubTitle   | string | Subnome exibido abaixo do título |
+| SaveFolder | string | Nome do arquivo de config |
 
 ---
 
-➖ Botão de Minimizar (OBRIGATÓRIO)
+# ➖ Botão de Minimizar (OBRIGATÓRIO)
 
+```lua
 Window:AddMinimizeButton({
     Button = { 
         Image = "rbxassetid://100971981026789", 
@@ -46,55 +47,62 @@ Window:AddMinimizeButton({
         CornerRadius = UDim.new(0.4, 1) 
     }
 })
+```
 
 Permite fechar e reabrir o hub.
 
-
 ---
 
-📑 Criando Abas
+# 📑 Criando Abas
 
+```lua
 local Tab1 = Window:MakeTab({"Um", "cherry"})
 Window:SelectTab(Tab1)
+```
 
-📌 Parâmetros
+### 📌 Parâmetros
 
+```lua
 Window:MakeTab({"NomeDaAba", "icone"})
-
+```
 
 ---
 
-🎟 Discord Invite
+# 🎟 Discord Invite
 
+```lua
 Tab1:AddDiscordInvite({
     Name = "MAFIA Hub",
     Description = "Entrar no server",
     Logo = "rbxassetid://100971981026789",
     Invite = "Link do discord convite",
 })
-
+```
 
 ---
 
-📂 Section
+# 📂 Section
 
+```lua
 local Section = Tab1:AddSection({"secção"})
-
+```
 
 ---
 
-📜 Paragraph
+# 📜 Paragraph
 
+```lua
 local Paragraph = Tab1:AddParagraph({
     "Paragraph", 
     "Este é um parágrafo\nSegunda linha"
 })
-
+```
 
 ---
 
-🧩 Dialog (Janela Popup)
+# 🧩 Dialog (Janela Popup)
 
+```lua
 local Dialog = Window:Dialog({
     Title = "TEMA ALTERADO",
     Text = "a cor",
@@ -110,24 +118,26 @@ local Dialog = Window:Dialog({
         end}
     }
 })
-
+```
 
 ---
 
-🔘 Botão
+# 🔘 Botão
 
+```lua
 Tab1:AddButton({
     "Print",
     function(Value)
         print("TCC DOMINA")
     end
 })
-
+```
 
 ---
 
-🔁 Toggle (Modo 1 - Callback Separado)
+# 🔁 Toggle (Modo 1 - Callback Separado)
 
+```lua
 local Toggle1 = Tab1:AddToggle({
     Name = "Toggle",
     Description = "Isto é um  <font color='rgb(88, 101, 242)'>toggle</font> EXEMPLO",
@@ -137,12 +147,13 @@ local Toggle1 = Tab1:AddToggle({
 Toggle1:Callback(function(Value)
     
 end)
-
+```
 
 ---
 
-🔁 Toggle (Modo 2 - Callback Inline)
+# 🔁 Toggle (Modo 2 - Callback Inline)
 
+```lua
 Tab1:AddToggle({
     Name = "Toggle",
     Default = false,
@@ -150,12 +161,13 @@ Tab1:AddToggle({
         
     end
 })
-
+```
 
 ---
 
-🎚 Slider
+# 🎚 Slider
 
+```lua
 Tab1:AddSlider({
     Name = "Speed",
     Min = 1,
@@ -166,22 +178,22 @@ Tab1:AddSlider({
         
     end
 })
+```
 
-📌 Parâmetros
+### 📌 Parâmetros
 
-Campo	Descrição
-
-Min	Valor mínimo
-Max	Valor máximo
-Increase	Quanto aumenta por passo
-Default	Valor inicial
-
-
+| Campo    | Descrição |
+|----------|-----------|
+| Min      | Valor mínimo |
+| Max      | Valor máximo |
+| Increase | Quanto aumenta por passo |
+| Default  | Valor inicial |
 
 ---
 
-📋 Dropdown
+# 📋 Dropdown
 
+```lua
 local Dropdown = Tab1:AddDropdown({
     Name = "Players List",
     Description = "Select the <font color='rgb(88, 101, 242)'>Number</font>",
@@ -192,12 +204,13 @@ local Dropdown = Tab1:AddDropdown({
         
     end
 })
-
+```
 
 ---
 
-📝 TextBox
+# 📝 TextBox
 
+```lua
 Tab1:AddTextBox({
     Name = "Name item",
     Description = "1 Item on 1 Server", 
@@ -206,12 +219,13 @@ Tab1:AddTextBox({
         
     end
 })
-
+```
 
 ---
 
-🧠 Estrutura Completa Exemplo
+# 🧠 Estrutura Completa Exemplo
 
+```lua
 local tcc = loadstring(game:HttpGet("https://raw.githubusercontent.com/SrDark222/Mafia-hub-v1/refs/heads/main/mafia%20hub2.lua"))()
 
 local Window = tcc:MakeWindow({
@@ -272,12 +286,13 @@ Tab1:AddTextBox({
         print("Texto:", Value)
     end
 })
-
+```
 
 ---
 
-📌 Padrão Oficial Estrutural
+# 📌 Padrão Oficial Estrutural
 
+```
 MakeWindow
  ├── AddMinimizeButton
  ├── MakeTab
@@ -290,28 +305,19 @@ MakeWindow
  │    ├── AddDropdown
  │    └── AddTextBox
  └── Dialog
-
+```
 
 ---
 
-✅ Modelo Base Registrado
+# ✅ Modelo Base Registrado
 
 Este README representa o padrão estrutural oficial do:
 
-Mafia-hub-v1 (redZ / MAFIA / t.c.c hub)
+**Mafia-hub-v1 (redZ / MAFIA / t.c.c hub)**
 
 Pode ser usado como:
 
-Base para novos hubs
-
-Template público
-
-Documentação técnica
-
-Referência estrutural
-
-
-
----
-
-Se quiser depois eu monto versão profissional estilo open-source com badge, preview, changelog e estrutura organizada tipo repo grande.
+- Base para novos hubs
+- Template público
+- Documentação técnica
+- Referência estrutural
